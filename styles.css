@@ -18,7 +18,7 @@ body {
   height: 90%;
 }
 
-section {
+section, .modal > .flex-container > div {
   height: 30%;
   margin: 5% auto;
 }
@@ -55,11 +55,6 @@ section {
   position: fixed;
   overflow: hidden;
   z-index: 2;
-}
-
-.modal > .flex-container > div {
-  height: 30%;
-  margin: 5% auto;
 }
 
 .hidden {
