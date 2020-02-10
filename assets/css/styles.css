@@ -1,8 +1,9 @@
 body {
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
   width: 100vw;
   height: 100vh;
   margin: 0;
-  background-image: url("assets/images/background.jpg");
+  background-image: url("../images/background.jpg");
   background-size: 105%;
   color: white;
   overflow: hidden;
@@ -46,6 +47,10 @@ section, .modal > .flex-container > div {
 
 .button-container {
   margin: 0 10px;
+}
+
+button {
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
 }
 
 .modal {
