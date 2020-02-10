@@ -23,6 +23,7 @@ section {
   align-items: center;
   text-align: center;
   margin: auto;
+  width: 100%;
 }
 
 .flex-column {
@@ -35,5 +36,4 @@ section {
 
 .flex-row {
   flex-direction: row;
-  justify-content: space-between;
 }
