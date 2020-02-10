@@ -2,7 +2,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-image: url("assets/images/background.jpg");
-  background-size: cover;
+  background-size: 105%;
   color: white;
   overflow: hidden;
 }
@@ -21,4 +21,9 @@ body {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+  justify-content: space-between;
 }
