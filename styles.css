@@ -12,7 +12,10 @@ body {
   height: 90%;
 }
 
-section {}
+section {
+  height: 50%;
+  margin: 5% auto;
+}
 
 .flex-container {
   display: flex;
