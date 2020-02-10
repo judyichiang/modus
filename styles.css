@@ -43,3 +43,7 @@ section {
 .flex-row {
   flex-direction: row;
 }
+
+.button-container {
+  margin: 0 10px;
+}
