@@ -3,5 +3,20 @@ body {
   height: 100vh;
   background-image: url("assets/images/background.jpg");
   background-size: cover;
+  color: white;
   overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
