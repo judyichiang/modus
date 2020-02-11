@@ -1,16 +1,32 @@
 class Quotes {
-  constructor() {
+  constructor(quoteModal) {
+
+    this.quoteModal = quoteModal;
+
     this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError.bind(this);
-  };
+  }
 
   handleGetQuoteSuccess(data) {
-    console.log("working: ", data);
-  };
+    console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
+
+    var quoteContent = document.querySelector('.quote-text');
+    var qButton = document.querySelector('#quote-button');
+
+    console.log(quoteContent);
+    quoteContent.textContent = `"${data.quoteText}" - ${data.quoteAuthor}`;
+
+
+
+    qButton.addEventListener("click", function () {
+      console.log("click quote button")
+    })
+
+  }
 
   handleGetQuoteError(error) {
     console.log(error);
-  };
+  }
 
   getQuotes() {
     $.ajax({
@@ -18,5 +34,8 @@ class Quotes {
       success: this.handleGetQuoteSuccess,
       error: this.handleGetQuoteError
     })
-  };
-};
+  }
+
+
+
+}
