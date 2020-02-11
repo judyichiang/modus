@@ -126,3 +126,11 @@ input {
 .warm-gradient-two {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
+
+.quote-text {
+  font-size: 2rem;
+}
+
+.quote-author {
+  font-size: 1.5rem;
+}
