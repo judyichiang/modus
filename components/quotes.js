@@ -1,19 +1,22 @@
 class Quotes {
-  constructor(quoteModal) {
+  constructor() {
 
     this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError.bind(this);
   }
 
   handleGetQuoteSuccess(data) {
-    console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
-
+    // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
     var quoteModal = document.querySelector('#quote-modal');
-    var quoteContent = document.querySelector('.quote-text');
+    var quoteContent1 = document.querySelector('.quote-text');
+    var quoteContent2 = document.querySelector('.quote-author');
     var qButton = document.querySelector('#quote-button');
 
-    console.log(quoteContent);
-    quoteContent.textContent = `"${data.quoteText}" - ${data.quoteAuthor}`;
+    console.log(quoteContent1);
+    console.log(quoteContent2);
+    quoteContent1.textContent = `"${data.quoteText}"`;
+    quoteContent2.textContent = `- ${data.quoteAuthor}`;
+
 
     qButton.addEventListener("click", function () {
       console.log("click quote button")
@@ -34,7 +37,6 @@ class Quotes {
       error: this.handleGetQuoteError
     })
   }
-
 
 
 }
