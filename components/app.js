@@ -36,8 +36,11 @@ class App {
         var temperature = this.currentWeather.main.temp;
         var weatherIcon = this.currentWeather.weather[0].icon;
         document.querySelector("#location-display").textContent = city + ", " + state;
-        document.querySelector("#temperature-display").innerHTML = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(2) + "<span>&#8457;<span> / " + ((Number(temperature) - 273.15)).toFixed(2) + "<span>&#8451;<span>";
-        document.querySelector("#weather-icon").innerHTML = "<img src=http://openweathermap.org/img/wn/" + weatherIcon + ".png>";
+        document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(0);
+        document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(2);
+        var iconImg = document.createElement("img")
+        iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
+        document.getElementById("weather-icon").append(iconImg);
     };
     getWeatherError (error) {
         console.log(error);
