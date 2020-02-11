@@ -1,6 +1,4 @@
 
-var quoteModal = document.querySelector(".quote-text")
-
-var quotes = new Quotes (quoteModal);
+var quotes = new Quotes();
 var app = new App(quotes);
 app.start();
