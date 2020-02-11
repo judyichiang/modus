@@ -31,7 +31,7 @@ body {
   height: 100%;
 
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   color: #f1f1f1;
   padding: 20px;
 }
@@ -84,8 +84,14 @@ button {
   border-radius: 10px;
 }
 
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 5px white;
+}
+
 input {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  color: gray;
   padding: 10px;
   border: none;
   border-radius: 10px;
