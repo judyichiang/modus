@@ -12,11 +12,12 @@
   <main id="home-page" class="flex-container">
     <div id="main-container" class="flex-container flex-column">
       <section id="greeting" class="flex-container">
-        <h1>Hello!</h1>
         <div id="weather-display" class="">
-          <div id="location-display">Irvine, CA</div>
+          <h1 id="greetStatement">Hello!</h1>
+          <br>
+          <div id="location-display"></div>
           <div id="weather-icon"></div>
-          <div id="temperature-display">80 °F</div>
+          <div id="temperature-display"></div>
         </div>
       </section>
       <section id="location-bar" class="flex-container">
@@ -26,7 +27,7 @@
       <section id="modal-buttons" class="flex-container">
         <div class="button-container"><button id="quote-button" class="modal-button" type="button">Q U O T E</button></div>
         <div class="button-container"><button id="photo-button" class="modal-button" type="button">P H O T O</button></div>
-        <div class="button-container"><button id="music-button" class="modal-button" type="button">M U S I C</button></div>
+        <div class="button-container"><button id="music-button" class="modal-button" type="button">R E S T A U R A N T</button></div>
       </section>
     </div>
   </main>
@@ -46,6 +47,8 @@
   </aside>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script src="components/weather.js"></script>
+  <script src="components/userLocation.js"></script>
   <script src="components/quotes.js"></script>
   <script src="components/app.js"></script>
   <script src="main.js"></script>
