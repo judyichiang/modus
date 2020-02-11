@@ -1,2 +1,3 @@
-var app = new App();
+var quotes = new Quotes ();
+var app = new App(quotes);
 app.start();
