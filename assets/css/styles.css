@@ -31,9 +31,8 @@ body {
   height: 100%;
 
   position: fixed;
-  /* background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0.4);
   color: #f1f1f1;
-  /* width: 100%; */
   padding: 20px;
 }
 
@@ -82,6 +81,13 @@ button {
   background-color: black;
   padding: 10px;
   border: white 1px solid;
+  border-radius: 10px;
+}
+
+input {
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border: none;
   border-radius: 10px;
 }
 
