@@ -7,9 +7,8 @@ var homePage = document.querySelector('#home-page');
 var quoteModal = document.querySelector('#quote-modal');
 var returnButton1 = document.querySelector('.return-button-1');
 var returnButton2 = document.querySelector('.return-button-2');
-console.log(homePage)
-console.log(returnButton1);
 
+//photo modal
 returnButton1.addEventListener("click", function () {
   homePage.classList.remove('hidden');
   quoteModal.classList.add('hidden');
@@ -17,8 +16,10 @@ returnButton1.addEventListener("click", function () {
   console.log("return clicked")
 });
 
+//quote modal
 returnButton2.addEventListener("click", function () {
   homePage.classList.remove('hidden');
   quoteModal.classList.add('hidden');
+  this.clearIntervalID = null;
   console.log("return clicked")
 });

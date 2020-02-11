@@ -3,6 +3,7 @@ class Quotes {
 
     this.handleGetQuoteSuccess = this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError = this.handleGetQuoteError.bind(this);
+
   }
 
   handleGetQuoteSuccess(data) {
@@ -17,19 +18,20 @@ class Quotes {
     // quoteContent2.textContent = `- ${data.quoteAuthor}`;
 
     if (data.quoteAuthor.length === 0) {
-      quoteContent2.textContent = "- Unknown"
+      quoteContent2.textContent = "Unknown"
     }
     else {
-      quoteContent2.textContent = `- ${data.quoteAuthor}`;
+      quoteContent2.textContent = `${data.quoteAuthor}`;
     }
-
 
     qButton.addEventListener("click", function () {
       console.log("quote button clicked")
       quoteModal.classList.remove('hidden');
       homePage.classList.add('hidden');
+      // clearIntervalID = setInterval(function () {
+      //   this.quotes.getQuotes()
+      // }, 1000);
     })
-
   }
 
   handleGetQuoteError(error) {
@@ -43,6 +45,5 @@ class Quotes {
       error: this.handleGetQuoteError
     })
   }
-
 
 }

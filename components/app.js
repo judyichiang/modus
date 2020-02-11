@@ -5,6 +5,7 @@ class App {
         this.getWeatherSuccess = this.getWeatherSuccess.bind(this);
         this.getWeatherError = this.getWeatherError.bind(this);
         this.quotes = quotes;
+        this.clearIntervalID = null;
         this.userLocation = null;
         this.currentWeather = null;
     }
@@ -36,20 +37,21 @@ class App {
         var temperature = this.currentWeather.main.temp;
         var weatherIcon = this.currentWeather.weather[0].icon;
         document.querySelector("#location-display").textContent = city + ", " + state;
-        document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(0);
+        document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9 / 5 + 32).toFixed(0);
         document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(0);
         var iconImg = document.createElement("img")
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
     }
-    getWeatherError (error) {
+    getWeatherError(error) {
         console.log(error);
     }
+
     start() {
         this.getLocation();
         this.quotes.getQuotes();
-        setInterval(function () {
+        this.clearIntervalID = setInterval(function () {
             this.quotes.getQuotes()
-        }, 1000);
+        }, 2000);
     }
 }
