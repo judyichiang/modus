@@ -7,6 +7,7 @@ class Quotes {
 
   handleGetQuoteSuccess(data) {
     // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
+    var homePage = document.querySelector('#home-page')
     var quoteModal = document.querySelector('#quote-modal');
     var quoteContent1 = document.querySelector('.quote-text');
     var quoteContent2 = document.querySelector('.quote-author');
@@ -21,6 +22,8 @@ class Quotes {
     qButton.addEventListener("click", function () {
       console.log("click quote button")
       quoteModal.classList.remove('hidden');
+      homePage.classList.add('hidden');
+
       console.log(quoteModal);
     })
 
