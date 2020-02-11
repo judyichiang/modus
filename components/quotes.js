@@ -18,17 +18,15 @@ class Quotes {
 
 
     qButton.addEventListener("click", function () {
-      console.log("click quote button")
+      console.log("quote button clicked")
       quoteModal.classList.remove('hidden');
       homePage.classList.add('hidden');
-
-      console.log(quoteModal);
     })
 
   }
 
   handleGetQuoteError(error) {
-    console.log(error);
+    // console.log(error);
   }
 
   getQuotes() {
