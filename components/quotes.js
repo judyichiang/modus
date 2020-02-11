@@ -13,8 +13,6 @@ class Quotes {
     var quoteContent2 = document.querySelector('.quote-author');
     var qButton = document.querySelector('#quote-button');
 
-    console.log(quoteContent1);
-    console.log(quoteContent2);
     quoteContent1.textContent = `"${data.quoteText}"`;
     quoteContent2.textContent = `- ${data.quoteAuthor}`;
 
