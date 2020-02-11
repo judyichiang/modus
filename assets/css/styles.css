@@ -3,15 +3,37 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  background-image: url("../images/background.jpg");
+  background-image: url("../videos/clear.mp4");
   background-size: 105%;
   color: white;
   overflow: hidden;
 }
 
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+/* .content {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+} */
+
 #home-page {
   width: 100%;
   height: 100%;
+
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+  padding: 20px;
 }
 
 #main-container {
@@ -55,6 +77,24 @@ section, .modal > .flex-container > div {
 
 button {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border: white 1px solid;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 5px white;
+}
+
+input {
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  color: gray;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
 }
 
 .modal {
@@ -68,4 +108,20 @@ button {
 
 .hidden {
   display: none;
+}
+
+.warm-gradient {
+  background: #f12711;
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+}
+
+.cool-gradient {
+  background: #7F7FD5;
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.warm-gradient-two {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
