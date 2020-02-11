@@ -19,6 +19,10 @@ body {
   height: 90%;
 }
 
+#weather-display > div {
+  margin: 0 10px;
+}
+
 section, .modal > .flex-container > div {
   height: 30%;
   margin: 5% auto;
