@@ -1,17 +1,16 @@
 class Quotes {
   constructor() {
-
     this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError.bind(this);
-  }
+  };
 
   handleGetQuoteSuccess(data) {
     console.log("working: ", data);
-  }
+  };
 
   handleGetQuoteError(error) {
-    console.log("not working :(");
-  }
+    console.log(error);
+  };
 
   getQuotes() {
     $.ajax({
@@ -19,7 +18,5 @@ class Quotes {
       success: this.handleGetQuoteSuccess,
       error: this.handleGetQuoteError
     })
-  }
-
-
-}
+  };
+};
