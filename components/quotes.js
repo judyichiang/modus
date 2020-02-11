@@ -1,12 +1,12 @@
 class Quotes {
   constructor() {
 
-    this.handleGetQuoteSuccess.bind(this);
-    this.handleGetQuoteError.bind(this);
+    this.handleGetQuoteSuccess = this.handleGetQuoteSuccess.bind(this);
+    this.handleGetQuoteError = this.handleGetQuoteError.bind(this);
   }
 
   handleGetQuoteSuccess(data) {
-    // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
+    console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
     var homePage = document.querySelector('#home-page')
     var quoteModal = document.querySelector('#quote-modal');
     var quoteContent1 = document.querySelector('.quote-text');
@@ -14,7 +14,14 @@ class Quotes {
     var qButton = document.querySelector('#quote-button');
 
     quoteContent1.textContent = `"${data.quoteText}"`;
-    quoteContent2.textContent = `- ${data.quoteAuthor}`;
+    // quoteContent2.textContent = `- ${data.quoteAuthor}`;
+
+    if (data.quoteAuthor.length === 0) {
+      quoteContent2.textContent = "- Unknown"
+    }
+    else {
+      quoteContent2.textContent = `- ${data.quoteAuthor}`;
+    }
 
 
     qButton.addEventListener("click", function () {

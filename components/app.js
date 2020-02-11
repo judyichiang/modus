@@ -41,7 +41,7 @@ class App {
         var iconImg = document.createElement("img")
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
-    };
+    }
     getWeatherError (error) {
         console.log(error);
     }
@@ -50,6 +50,6 @@ class App {
         this.quotes.getQuotes();
         setInterval(function () {
             this.quotes.getQuotes()
-        }, 6000);
+        }, 1000);
     }
 }
