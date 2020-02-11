@@ -31,7 +31,7 @@ body {
   height: 100%;
 
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.4); */
   color: #f1f1f1;
   /* width: 100%; */
   padding: 20px;
@@ -78,6 +78,11 @@ section, .modal > .flex-container > div {
 
 button {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border: white 1px solid;
+  border-radius: 10px;
 }
 
 .modal {
@@ -91,4 +96,20 @@ button {
 
 .hidden {
   display: none;
+}
+
+.warm-gradient {
+  background: #f12711;
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+}
+
+.cool-gradient {
+  background: #7F7FD5;
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.warm-gradient-two {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
