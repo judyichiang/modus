@@ -45,5 +45,8 @@ class App {
     start() {
         this.getLocation();
         this.quotes.getQuotes();
+        setInterval(function () {
+            this.quotes.getQuotes()
+        }, 6000);
     }
 }
