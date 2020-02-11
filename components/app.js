@@ -37,7 +37,7 @@ class App {
         var weatherIcon = this.currentWeather.weather[0].icon;
         document.querySelector("#location-display").textContent = city + ", " + state;
         document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(0);
-        document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(2);
+        document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(0);
         var iconImg = document.createElement("img")
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
