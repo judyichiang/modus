@@ -50,8 +50,8 @@ class App {
     start() {
         this.getLocation();
         this.quotes.getQuotes();
-        this.clearIntervalID = setInterval(function () {
-            this.quotes.getQuotes()
-        }, 2000);
+        // this.clearIntervalID = setInterval(function () {
+        //     this.quotes.getQuotes()
+        // }, 2000);
     }
 }

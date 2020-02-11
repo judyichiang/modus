@@ -1,6 +1,8 @@
 class Quotes {
   constructor() {
 
+    this.clearIntervalID = clearInterval;
+
     this.handleGetQuoteSuccess = this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError = this.handleGetQuoteError.bind(this);
 
@@ -28,9 +30,9 @@ class Quotes {
       console.log("quote button clicked")
       quoteModal.classList.remove('hidden');
       homePage.classList.add('hidden');
-      // clearIntervalID = setInterval(function () {
-      //   this.quotes.getQuotes()
-      // }, 1000);
+      this.clearIntervalID = setInterval(function () {
+        this.quotes.getQuotes()
+      }, 1000);
     })
   }
 
