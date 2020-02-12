@@ -1,6 +1,6 @@
 const photos = new Photos();
 var quotes = new Quotes();
-var app = new App(quotes);
+var app = new App(quotes, photos);
 app.start();
 
 var homePage = document.querySelector('#home-page');
