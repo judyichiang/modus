@@ -2,7 +2,6 @@ class Quotes {
   constructor() {
 
     this.setIntervalID = null;
-
     this.handleGetQuoteSuccess = this.handleGetQuoteSuccess.bind(this);
     this.handleGetQuoteError = this.handleGetQuoteError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
@@ -10,7 +9,6 @@ class Quotes {
   }
 
 handleGetQuoteSuccess(data) {
-  // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
   var quoteContent1 = document.querySelector('.quote-text');
   var quoteContent2 = document.querySelector('.quote-author');
   var qButton = document.querySelector('#quote-button');

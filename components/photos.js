@@ -19,10 +19,7 @@ class Photos {
   }
 
   handleGetPhotoSuccess(data) {
-    console.log(data);
     const selectedPhotos = [];
-    console.log("query", this.query);
-
     let counter = 0;
     if (data.photos.length > 3) {
       while (counter < 4) {
@@ -32,14 +29,10 @@ class Photos {
           counter++;
         }
       }
-      console.log("final selected photos", selectedPhotos);
-
       $(".d-block").each(function (i) {
         this.src = selectedPhotos[i].src.large;
-        console.log("this.source", this.src);
       })
     }
-    console.log("success")
   }
 
   handleGetPhotoError(error) {
