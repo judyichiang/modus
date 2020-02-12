@@ -10,13 +10,12 @@ class Quotes {
   }
 
 handleGetQuoteSuccess(data) {
-  console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
+  // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
   var quoteContent1 = document.querySelector('.quote-text');
   var quoteContent2 = document.querySelector('.quote-author');
   var qButton = document.querySelector('#quote-button');
 
   quoteContent1.textContent = `"${data.quoteText}"`;
-  // quoteContent2.textContent = `- ${data.quoteAuthor}`;
 
   if (data.quoteAuthor.length === 0) {
     quoteContent2.textContent = "Unknown"
