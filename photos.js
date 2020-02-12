@@ -1,5 +1,9 @@
 class Photos {
   constructor() {
+    this.api_key = "563492ad6f91700001000001181a6d6be1a748cbba8b2a899f7be7b1"
+    this.search = "storm";
+    this.selectedPhotos = [];
+
     this.handleGetPhotoSuccess = this.handleGetPhotoSuccess.bind(this);
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
@@ -60,9 +64,9 @@ class Photos {
   getPhotos() {
     $.ajax({
       beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", api_key);
+        xhr.setRequestHeader("Authorization", this.api_key);
       },
-      url: "https://api.pexels.com/v1/search?query=" + search + "&per_page=80&page=1",
+      url: "https://api.pexels.com/v1/search?query=" + this.search + "&per_page=80&page=1",
       success: this.handleGetPhotoSuccess,
       error: this.handleGetPhotoError,
     });
