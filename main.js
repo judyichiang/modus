@@ -1,4 +1,4 @@
-const photos = new Photos();
+let photos = new Photos();
 var quotes = new Quotes();
 var app = new App(quotes, photos);
 app.start();
