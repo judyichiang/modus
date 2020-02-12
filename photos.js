@@ -5,7 +5,7 @@ class Photos {
     this.handleGetPhotoSuccess = this.handleGetPhotoSuccess.bind(this);
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
-    this.getPhotos = this.getPhotos.bind(this);
+    // this.getPhotos = this.getPhotos.bind(this);
   }
 
   handleGetPhotoSuccess(data) {
@@ -58,7 +58,7 @@ class Photos {
     photoModal.classList.remove('hidden');
     homePage.classList.add('hidden');
     console.log("this", this);
-    this.getPhotos;
+    this.getPhotos();
   }
 
   getPhotos() {
