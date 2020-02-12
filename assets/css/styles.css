@@ -130,6 +130,7 @@ input {
 
 .quote-text {
   font-size: 2rem;
+  max-height: 30%;
   width: 90%;
 }
 
