@@ -95,11 +95,13 @@ button {
   width: 125px;
   border: white 1px solid;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   cursor: pointer;
   box-shadow: 0 0 20px 5px white;
+  transform: scale(1.05);
 }
 
 input {
@@ -162,4 +164,8 @@ label {
   object-fit: cover;
   width: 30vw;
   height: 45vh;
+}
+
+#recenter:hover {
+  cursor: pointer;
 }
