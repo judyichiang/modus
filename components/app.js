@@ -27,12 +27,6 @@ class App {
         document.querySelector("#location-display").textContent = city + ", " + state;
         this.getWeather(this.userLocation.zip);
         console.log(this);
-        document.getElementById("location-button").addEventListener("click", function () {
-            app.getZip(document.querySelector("#location-bar>label>input").value);
-        });
-        document.getElementById("recenter").addEventListener("click", function () {
-            app.getLocation();
-        });
         document.querySelector("#location-bar>label>input").value = "";
     };
     getLocationError(error) {
@@ -41,7 +35,7 @@ class App {
     };
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
-            alert("Please enter a valid 5 digit ZIP code.");
+            return alert("Please enter a valid 5 digit ZIP code.");
         } else {
             $.ajax ({
                 url: "http://api.zippopotam.us/us/" + inputZip,
