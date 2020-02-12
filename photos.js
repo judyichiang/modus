@@ -1,11 +1,9 @@
 class Photos {
   constructor() {
-    // this.api_key = "563492ad6f91700001000001181a6d6be1a748cbba8b2a899f7be7b1"
-    // this.search = "panda";
     this.handleGetPhotoSuccess = this.handleGetPhotoSuccess.bind(this);
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
-    // this.getPhotos = this.getPhotos.bind(this);
+    this.searchQuery = null;
   }
 
   handleGetPhotoSuccess(data) {
