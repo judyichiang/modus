@@ -12,14 +12,14 @@ class App {
         this.userLocation = null;
         this.currentWeather = null;
         this.inputZip = null;
-    };
+    }
     getLocation(data) {
         $.ajax({
             url: "http://ip-api.com/json/",
             success: this.getLocationSuccess,
             error: this.getLocationError
         });
-    };
+    }
     getLocationSuccess(data) {
         this.userLocation = data;
         var city = this.userLocation.city;
@@ -34,28 +34,28 @@ class App {
             app.getLocation();
         });
         document.querySelector("#location-bar>label>input").value = "";
-    };
+    }
     getLocationError(error) {
         console.log(error);
         document.querySelector("#location-bar>label>input").value = "";
-    };
+    }
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
             alert("Please enter a 5 digit ZIP code");
-        };
+        }
         $.ajax ({
             url: "http://api.zippopotam.us/us/" + inputZip,
             success: this.getZipSuccess,
             error: this.getZipError
         });
-    };
+    }
     getZipSuccess (data) {
         this.userLocation = document.querySelector("#location-bar>label>input").value;
         this.inputZip = data.places[0];
         document.getElementById("location-display").textContent = this.inputZip["place name"] + ", " + this.inputZip["state abbreviation"];
         app.getWeather(this.userLocation);
         document.querySelector("#location-bar>label>input").value = "";
-    };
+    }
     getZipError (error) {
         console.log(error);
         document.querySelector("#location-bar>label>input").value = "";
@@ -66,27 +66,30 @@ class App {
             success: this.getWeatherSuccess,
             error: this.getWeatherError
         });
-    };
+    }
     getWeatherSuccess(data) {
         this.currentWeather = data;
         var temperature = this.currentWeather.main.temp;
         var weather = (this.currentWeather.weather[0].main).toLowerCase();
         var weatherIcon = this.currentWeather.weather[0].icon;
+
         document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(0);
         document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(0);
         while (document.querySelector("#weather-icon>img")) {
             document.querySelector("#weather-icon>img").remove();
-        };
+       }
         var iconImg = document.createElement("img");
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
+
+        console.log(weatherIcon)
 
         function hideVideo () {
             var videoTags = document.querySelectorAll("video")
             for(var i = 0; i < videoTags.length; i++) {
                 document.getElementsByClassName("background")[i].className = "background hidden";
             }
-        };
+       }
         switch (weather) {
             case "clear":
                 hideVideo();
@@ -116,6 +119,7 @@ class App {
                 hideVideo();
                 document.getElementsByClassName("background")[4].classList.remove("hidden")
         }
+        this.photos.getPhotos(data.weather[0].description)
     }
     getWeatherError(error) {
         console.log(error);
@@ -125,5 +129,5 @@ class App {
         this.getLocation();
         this.quotes.getQuotes();
         document.getElementById("photo-button").addEventListener("click", this.photos.initializeModal);
-    };
+   }
 }
