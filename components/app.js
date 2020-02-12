@@ -1,5 +1,5 @@
 class App {
-    constructor(quotes) {
+    constructor(quotes, photos) {
         this.getLocationSuccess = this.getLocationSuccess.bind(this);
         this.getLocationError = this.getLocationError.bind(this);
         this.getWeatherSuccess = this.getWeatherSuccess.bind(this);
@@ -7,6 +7,7 @@ class App {
         this.getZipSuccess = this.getZipSuccess.bind(this);
         this.getZipError = this.getZipError.bind(this);
         this.quotes = quotes;
+        this.photos = photos;
         this.setIntervalID = null;
         this.userLocation = null;
         this.currentWeather = null;
@@ -33,9 +34,9 @@ class App {
         console.log(error);
     };
     getZip (inputZip) {
-        if(inputZip === "" || inputZip.length !== 5) {
-            return alert("Please input accurate Zip Code to submit");
-        }; 
+        if (!/[\d]{5}/.test(inputZip)) {
+            alert("Please enter a 5 digit ZIP code");
+        };
         $.ajax ({
             url: "http://api.zippopotam.us/us/" + inputZip,
             success: this.getZipSuccess,
@@ -78,6 +79,6 @@ class App {
     start() {
         this.getLocation();
         this.quotes.getQuotes();
-    }
+        document.getElementById("photo-button").addEventListener("click", this.photos.initializeModal);
+    };
 }
-

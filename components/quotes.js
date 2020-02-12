@@ -28,15 +28,13 @@ handleGetQuoteSuccess(data) {
 }
 
 initializeModal() {
-  var homePage = document.querySelector('#home-page')
-  var quoteModal = document.querySelector('#quote-modal');
-  quoteModal.classList.remove('hidden');
-  homePage.classList.add('hidden');
+  document.querySelector('#quote-modal').classList.remove('hidden');
+  document.querySelector('#home-page').classList.add('hidden');
   this.setIntervalID = setInterval(this.getQuotes, 6000);
 }
 
 handleGetQuoteError(error) {
-  // console.log(error);
+  console.log(error);
 }
 
 getQuotes() {
