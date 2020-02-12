@@ -26,7 +26,6 @@ class App {
         var state = this.userLocation.region;
         document.querySelector("#location-display").textContent = city + ", " + state;
         this.getWeather(this.userLocation.zip);
-        console.log(this);
         document.querySelector("#location-bar>label>input").value = "";
     }
     getLocationError(error) {
@@ -79,8 +78,6 @@ class App {
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
 
-        console.log(weatherIcon)
-
         function hideVideo () {
             var videoTags = document.querySelectorAll("video")
             for(var i = 0; i < videoTags.length; i++) {
@@ -94,6 +91,7 @@ class App {
                 this.photos.query = "sunny";
                 break;
             case "rain":
+            case "drizzle":    
                 hideVideo();
                 document.getElementsByClassName("background")[1].classList.remove("hidden")
                 this.photos.query = "rain";
