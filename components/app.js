@@ -35,16 +35,6 @@ class App {
     }
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
-<<<<<<< HEAD
-            alert("Please enter a 5 digit ZIP code");
-        }
-        $.ajax ({
-            url: "http://api.zippopotam.us/us/" + inputZip,
-            success: this.getZipSuccess,
-            error: this.getZipError
-        });
-    }
-=======
             return alert("Please enter a valid 5 digit ZIP code.");
         } else {
             $.ajax ({
@@ -54,7 +44,7 @@ class App {
             });
         }
     };
->>>>>>> master
+
     getZipSuccess (data) {
         this.userLocation = document.querySelector("#location-bar>label>input").value;
         this.inputZip = data.places[0];
