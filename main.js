@@ -12,8 +12,6 @@ var returnButton2 = document.querySelector('.return-button-2');
 returnButton1.addEventListener("click", function () {
   homePage.classList.remove('hidden');
   quoteModal.classList.add('hidden');
-  var quoteModal = document.querySelector('#quote-modal');
-  console.log("return clicked")
 });
 
 //quote modal
@@ -21,7 +19,4 @@ returnButton2.addEventListener("click", function () {
   homePage.classList.remove('hidden');
   quoteModal.classList.add('hidden');
   clearInterval(quotes.setIntervalID);
-  console.log("what",quotes.setIntervalID);
-
-  console.log("return clicked")
 });
