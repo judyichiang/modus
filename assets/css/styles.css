@@ -75,6 +75,20 @@ section, .modal > .flex-container > div {
   margin: 0 10px;
 }
 
+.quote-button {
+  position: fixed;
+}
+
+button.return-button-2 {
+  position: relative;
+  top: 250px;
+  right: 10px;
+}
+
+.quotes {
+  margin: 0 auto;
+}
+
 button {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
   color: white;

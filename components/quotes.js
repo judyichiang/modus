@@ -34,7 +34,7 @@ initializeModal() {
   var quoteModal = document.querySelector('#quote-modal');
   quoteModal.classList.remove('hidden');
   homePage.classList.add('hidden');
-  this.setIntervalID = setInterval(this.getQuotes, 1000);
+  this.setIntervalID = setInterval(this.getQuotes, 5000);
 }
 
 handleGetQuoteError(error) {
