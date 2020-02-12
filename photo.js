@@ -49,7 +49,7 @@ class Photos {
   }
 
   initializeModal() {
-    console.log(" photo button clicked");
+    console.log("photo button clicked");
     const homePage = document.getElementById('home-page');
     const photoModal = document.getElementById('photo-modal');
     photoModal.classList.remove('hidden');
