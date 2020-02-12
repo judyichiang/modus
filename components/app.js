@@ -34,8 +34,8 @@ class App {
         console.log(error);
     };
     getZip (inputZip) {
-        if(inputZip === "" || inputZip.length !== 5) {
-            return alert("Please input accurate Zip Code to submit");
+        if (!/[\d]{5}/.test(inputZip)) {
+            alert("Please enter a 5 digit ZIP code");
         };
         $.ajax ({
             url: "http://api.zippopotam.us/us/" + inputZip,

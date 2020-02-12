@@ -4,57 +4,7 @@ class Photos {
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
     this.query = query;
-    this.test = 'shark';
-  }
-  handleGetPhotoSuccess(data) {
-    console.log(data);
-    const selectedPhotos = [];
-
-    let counter = 0;
-    if (data.photos.length > 3) {
-      while (counter < 4) {
-        let randomIndex = Math.floor(Math.random() * (data.photos.length));
-        if (!selectedPhotos.includes(data.photos[randomIndex])) {
-          selectedPhotos.push(data.photos[randomIndex]);
-          counter++;
-        }
-      }
-      console.log("final selected photos", selectedPhotos);
-
-      $(".d-block").each(function (i) {
-        this.src = selectedPhotos[i].src.large;
-        console.log("this.source", this.src);
-      })
-    }
-}
-
-    // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
-    // var quoteContent1 = document.querySelector('.quote-text');
-    // var quoteContent2 = document.querySelector('.quote-author');
-    // var qButton = document.querySelector('#quote-button');
-
-    // quoteContent1.textContent = `"${data.quoteText}"`;
-    // quoteContent2.textContent = `- ${data.quoteAuthor}`;
-
-    // if (data.quoteAuthor.length === 0) {
-    //   quoteContent2.textContent = "Unknown"
-    // }
-    // else {
-    //   quoteContent2.textContent = `${data.quoteAuthor}`;
-    // }
-
-  //   qButton.addEventListener("click", this.initializeModal)
-  // }
-
-
-  handleGetPhotoError(error) {
-    console.log(error);
-  }
-
-  initializeModal() {
-    this.getPhotos();
-    document.getElementById('home-page').classList.add('hidden');
-    document.getElementById('photo-modal').classList.remove('hidden');
+    this.test = 'palm';
   }
 
   getPhotos() {
@@ -67,5 +17,37 @@ class Photos {
       success: this.handleGetPhotoSuccess,
       error: this.handleGetPhotoError,
     });
-}
+  }
+
+  handleGetPhotoSuccess(data) {
+    console.log(data);
+    const selectedPhotos = [];
+
+    let counter = 0;
+    if (data.photos.length > 3) {
+      while (counter < 4) {
+        const randomIndex = Math.floor(Math.random() * (data.photos.length));
+        if (!selectedPhotos.includes(data.photos[randomIndex])) {
+          selectedPhotos.push(data.photos[randomIndex]);
+          counter++;
+        }
+      }
+      console.log("final selected photos", selectedPhotos);
+
+      $(".d-block").each(function (i) {
+        this.src = selectedPhotos[i].src.large;
+        console.log("this.source", this.src);
+      })
+    }
+  }
+
+  handleGetPhotoError(error) {
+    console.log(error);
+  }
+
+  initializeModal() {
+    this.getPhotos();
+    document.getElementById('home-page').classList.add('hidden');
+    document.getElementById('photo-modal').classList.remove('hidden');
+  }
 }
