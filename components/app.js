@@ -26,12 +26,18 @@ class App {
         var state = this.userLocation.region;
         document.querySelector("#location-display").textContent = city + ", " + state;
         this.getWeather(this.userLocation.zip);
+        console.log(this);
         document.getElementById("location-button").addEventListener("click", function () {
             app.getZip(document.querySelector("#location-bar>label>input").value);
         });
+        document.getElementById("recenter").addEventListener("click", function () {
+            app.getLocation();
+        });
+        document.querySelector("#location-bar>label>input").value = "";
     };
     getLocationError(error) {
         console.log(error);
+        document.querySelector("#location-bar>label>input").value = "";
     };
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
@@ -48,9 +54,11 @@ class App {
         this.inputZip = data.places[0];
         document.getElementById("location-display").textContent = this.inputZip["place name"] + ", " + this.inputZip["state abbreviation"];
         app.getWeather(this.userLocation);
+        document.querySelector("#location-bar>label>input").value = "";
     };
     getZipError (error) {
         console.log(error);
+        document.querySelector("#location-bar>label>input").value = "";
     }
     getWeather(userLocation) {
         $.ajax({
@@ -62,15 +70,45 @@ class App {
     getWeatherSuccess(data) {
         this.currentWeather = data;
         var temperature = this.currentWeather.main.temp;
+        var weather = (this.currentWeather.weather[0].main).toLowerCase();
         var weatherIcon = this.currentWeather.weather[0].icon;
         document.getElementById("temp-fahrenheit").textContent = ((Number(temperature) - 273.15) * 9/5 + 32).toFixed(0);
         document.getElementById("temp-celsius").textContent = ((Number(temperature) - 273.15)).toFixed(0);
         while (document.querySelector("#weather-icon>img")) {
             document.querySelector("#weather-icon>img").remove();
         };
-        var iconImg = document.createElement("img")
+        var iconImg = document.createElement("img");
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
+
+        function hideVideo () {
+            var videoTags = document.querySelectorAll("video")
+            for(var i = 0; i < videoTags.length; i++) {
+                document.getElementsByClassName("background")[i].className = "background hidden";
+            }
+        };
+        weather = "snow"
+        switch (weather) {
+            case "clear":
+                hideVideo();
+                document.getElementsByClassName("background")[0].classList.remove("hidden")
+                break;
+            case "rain":
+                hideVideo();
+                document.getElementsByClassName("background")[1].classList.remove("hidden")
+                break;
+            case "thunderstorm":
+                hideVideo();
+                document.getElementsByClassName("background")[2].classList.remove("hidden")
+                break;
+            case "snow":
+                hideVideo();
+                document.getElementsByClassName("background")[3].classList.remove("hidden")
+                break;
+            default:
+                hideVideo();
+                document.getElementsByClassName("background")[4].classList.remove("hidden")
+        }
     }
     getWeatherError(error) {
         console.log(error);
