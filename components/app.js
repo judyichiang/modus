@@ -80,8 +80,5 @@ class App {
         this.getLocation();
         this.quotes.getQuotes();
         document.getElementById("photo-button").addEventListener("click", this.photos.initializeModal);
-        setInterval(function () {
-            this.quotes.getQuotes()
-        }, 6000);
     };
 }
