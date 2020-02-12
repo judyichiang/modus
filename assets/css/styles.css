@@ -82,7 +82,6 @@ section, .modal > .flex-container > div {
 button.return-button-2 {
   position: relative;
   top: 250px;
-  right: 10px;
 }
 
 .quotes {

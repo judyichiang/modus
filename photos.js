@@ -4,7 +4,7 @@ class Photos {
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
     this.query = query;
-    this.test = 'palm';
+    this.test = 'palm tree';
   }
 
   getPhotos() {
