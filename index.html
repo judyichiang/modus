@@ -12,7 +12,7 @@
 
 <body>
   <video autoplay muted loop id="myVideo">
-    <source src="assets/videos/partly_cloudy.mp4" type="video/mp4">
+    <source src="assets/videos/clear6.mp4" type="video/mp4">
   </video>
   <main id="home-page" class="flex-container">
     <div id="main-container" class="flex-container flex-column">
@@ -31,13 +31,13 @@
         </div>
       </section>
       <section id="location-bar" class="flex-container">
-        <label>Zip Code: <input type="text" placeholder="Zip Code" name="zip"></label>
+        <label>ZIP Code: <input type="text" placeholder="ZIP Code" name="zip" maxlength="5" pattern="[0-9]{1,5}"></label>
         <div class="button-container"><button id="location-button" type="submit">Submit</button></div>
       </section>
       <section id="modal-buttons" class="flex-container">
         <div class="button-container"><button id="quote-button" class="modal-button" type="button">Q U O T E</button></div>
         <div class="button-container"><button id="photo-button" class="modal-button" type="button">P H O T O</button></div>
-        <div class="button-container"><button id="music-button" class="modal-button" type="button">R E S T A U R A N T</button></div>
+        <div class="button-container"><button id="music-button" class="modal-button" type="button">F O O D</button></div>
       </section>
     </div>
   </main>

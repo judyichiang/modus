@@ -79,7 +79,8 @@ button {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
   color: white;
   background-color: black;
-  padding: 10px;
+  padding: 15px 0;
+  width: 125px;
   border: white 1px solid;
   border-radius: 10px;
 }
@@ -92,7 +93,7 @@ button:hover {
 input {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
   color: gray;
-  padding: 10px;
+  padding: 15px;
   border: none;
   border-radius: 10px;
 }
@@ -104,6 +105,7 @@ input {
   position: fixed;
   overflow: hidden;
   z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -124,4 +126,14 @@ input {
 
 .warm-gradient-two {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.quote-text {
+  font-size: 2rem;
+  max-height: 30%;
+  width: 90%;
+}
+
+.quote-author {
+  font-size: 1.5rem;
 }
