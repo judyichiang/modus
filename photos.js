@@ -65,5 +65,5 @@ class Photos {
       url: "https://api.pexels.com/v1/search?query=" + search + "&per_page=80&page=1",
       success: this.handleGetPhotoSuccess,
       error: this.handleGetPhotoError,
-    )}
+    )};
 }
