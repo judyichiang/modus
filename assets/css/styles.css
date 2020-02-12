@@ -130,6 +130,7 @@ input {
 
 .quote-text {
   font-size: 2rem;
+  width: 90%;
 }
 
 .quote-author {
