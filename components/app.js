@@ -5,7 +5,7 @@ class App {
         this.getWeatherSuccess = this.getWeatherSuccess.bind(this);
         this.getWeatherError = this.getWeatherError.bind(this);
         this.quotes = quotes;
-        this.clearIntervalID = null;
+        this.setIntervalID = null;
         this.userLocation = null;
         this.currentWeather = null;
     }

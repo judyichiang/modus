@@ -20,6 +20,8 @@ returnButton1.addEventListener("click", function () {
 returnButton2.addEventListener("click", function () {
   homePage.classList.remove('hidden');
   quoteModal.classList.add('hidden');
-  this.clearIntervalID = null;
+  clearInterval(quotes.setIntervalID);
+  console.log("what",quotes.setIntervalID);
+
   console.log("return clicked")
 });
