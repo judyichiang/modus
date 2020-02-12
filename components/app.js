@@ -91,32 +91,38 @@ class App {
             case "clear":
                 hideVideo();
                 document.getElementsByClassName("background")[0].classList.remove("hidden")
+                this.photos.query = "sunny";
                 break;
             case "rain":
                 hideVideo();
                 document.getElementsByClassName("background")[1].classList.remove("hidden")
+                this.photos.query = "rain";
                 break;
             case "thunderstorm":
                 hideVideo();
                 document.getElementsByClassName("background")[2].classList.remove("hidden")
+                this.photos.query = "lightning";
                 break;
             case "snow":
                 hideVideo();
                 document.getElementsByClassName("background")[3].classList.remove("hidden")
+                this.photos.query = "snow";
                 break;
             case "clouds":
                 hideVideo();
                 if (data.weather[0].id == 801 || data.weather[0].id == 802) {
                     document.getElementsByClassName("background")[0].classList.remove("hidden")
+                    this.photos.query = "sunny";
                 } else {
                     document.getElementsByClassName("background")[5].classList.remove("hidden")
+                    this.photos.query = "overcast";
                 }
                 break;
             default:
                 hideVideo();
                 document.getElementsByClassName("background")[4].classList.remove("hidden")
+                this.photos.query = "mist";
         }
-        this.photos.getPhotos(data.weather[0].description)
     }
     getWeatherError(error) {
         console.log(error);
