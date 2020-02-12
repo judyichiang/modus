@@ -10,7 +10,7 @@ class Quotes {
   }
 
 handleGetQuoteSuccess(data) {
-  console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
+  // console.log(`"${data.quoteText}" - ${data.quoteAuthor}`);
   var quoteContent1 = document.querySelector('.quote-text');
   var quoteContent2 = document.querySelector('.quote-author');
   var qButton = document.querySelector('#quote-button');
@@ -29,7 +29,7 @@ handleGetQuoteSuccess(data) {
 }
 
 initializeModal() {
-  console.log("quote button clicked")
+  // console.log("quote button clicked")
   var homePage = document.querySelector('#home-page')
   var quoteModal = document.querySelector('#quote-modal');
   quoteModal.classList.remove('hidden');
@@ -38,7 +38,7 @@ initializeModal() {
 }
 
 handleGetQuoteError(error) {
-  // console.log(error);
+  console.log(error);
 }
 
 getQuotes() {

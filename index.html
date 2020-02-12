@@ -6,13 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hackathon 2</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <video autoplay muted loop id="myVideo">
+  <video autoplay muted loop class="background hidden">
     <source src="assets/videos/clear6.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop class="background hidden">
+    <source src="assets/videos/rain.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop class="background hidden">
+    <source src="assets/videos/lightning.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop class="background hidden">
+    <source src="assets/videos/snow.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop class="background hidden">
+    <source src="assets/videos/atmosphere.mp4" type="video/mp4">
   </video>
   <main id="home-page" class="flex-container">
     <div id="main-container" class="flex-container flex-column">
@@ -20,7 +33,7 @@
         <div id="weather-display" class="">
           <h1 id="greetStatement">Hello!</h1>
           <br>
-          <i class="fas fa-location-arrow"></i>
+          <i class="fas fa-location-arrow" id="recenter"></i>
           <div id="location-display"></div>
           <div id="weather-icon"></div>
           <div id="temperature-display">
@@ -32,7 +45,9 @@
         </div>
       </section>
       <section id="location-bar" class="flex-container">
-        <label>ZIP Code: <input type="text" placeholder="ZIP Code" name="zip" maxlength="5" pattern="[0-9]{1,5}"></label>
+        <label>ZIP Code:
+          <input type="text" placeholder="ZIP Code" name="zip" maxlength="5" pattern="[0-9]{1,5}">
+        </label>
         <div class="button-container"><button id="location-button" type="submit">Submit</button></div>
       </section>
       <section id="modal-buttons" class="flex-container">
@@ -52,8 +67,8 @@
 
   <aside id="quote-modal" class="modal hidden flex-container flex-column">
     <div class="flex-container flex-column quotes">
-      <div class="modal-content quote-text flex-row">Content</div>
-      <div class="modal-content quote-author flex-row">Content</div>
+      <div class="modal-text quote-text flex-row">Content</div>
+      <div class="modal-text quote-author flex-row">Content</div>
     </div>
     <div class="button-container flex-row quote-button"><button class="return-button-2" type="button">R E T U R N</button></div>
   </aside>
