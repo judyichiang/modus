@@ -41,13 +41,14 @@ class App {
     };
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
-            alert("Please enter a 5 digit ZIP code");
-        };
-        $.ajax ({
-            url: "http://api.zippopotam.us/us/" + inputZip,
-            success: this.getZipSuccess,
-            error: this.getZipError
-        });
+            alert("Please enter a valid 5 digit ZIP code.");
+        } else {
+            $.ajax ({
+                url: "http://api.zippopotam.us/us/" + inputZip,
+                success: this.getZipSuccess,
+                error: this.getZipError
+            });
+        }
     };
     getZipSuccess (data) {
         this.userLocation = document.querySelector("#location-bar>label>input").value;
@@ -58,6 +59,7 @@ class App {
     };
     getZipError (error) {
         console.log(error);
+        alert("Invalid ZIP code. Please try again.");
         document.querySelector("#location-bar>label>input").value = "";
     }
     getWeather(userLocation) {
@@ -87,7 +89,6 @@ class App {
                 document.getElementsByClassName("background")[i].className = "background hidden";
             }
         };
-        weather = "snow"
         switch (weather) {
             case "clear":
                 hideVideo();
