@@ -8,11 +8,11 @@ class Photos {
 
   handleGetPhotoSuccess(data) {
     console.log(data);
-    let selectedPhotos = [];
+    const selectedPhotos = [];
 
-    var counter = 0;
+    let counter = 0;
     while (counter < 4) {
-      var randomIndex = Math.floor(Math.random() * (data.photos.length));
+      let randomIndex = Math.floor(Math.random() * (data.photos.length));
       if (!selectedPhotos.includes(data.photos[randomIndex])) {
         selectedPhotos.push(data.photos[randomIndex]);
         counter++;
@@ -21,7 +21,7 @@ class Photos {
     console.log("final selected photos", selectedPhotos);
 
     $(".d-block").each(function (i) {
-      this.src = selectedPhotos[i].src.medium;
+      this.src = selectedPhotos[i].src.large;
       console.log("this.source", this.src);
     })
 }
@@ -50,12 +50,8 @@ class Photos {
   }
 
   initializeModal() {
-    console.log("photo button clicked");
-    const homePage = document.getElementById('home-page');
-    const photoModal = document.getElementById('photo-modal');
-    photoModal.classList.remove('hidden');
-    homePage.classList.add('hidden');
-    console.log("this", this);
+    document.getElementById('home-page').classList.add('hidden');
+    document.getElementById('photo-modal').classList.remove('hidden');
     this.getPhotos();
   }
 
