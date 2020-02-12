@@ -3,8 +3,6 @@ class Photos {
     this.handleGetPhotoSuccess = this.handleGetPhotoSuccess.bind(this);
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
-    this.query = query;
-    this.test = 'sunny';
   }
 
   getPhotos(weatherCondition) {
