@@ -6,6 +6,7 @@ app.start();
 var homePage = document.querySelector('#home-page');
 var quoteModal = document.querySelector('#quote-modal');
 const photoModal = document.getElementById("photo-modal");
+const photoButton = document.getElementById("photo-button");
 var returnButton1 = document.querySelector('.return-button');
 var returnButton2 = document.querySelector('.return-button-2');
 
