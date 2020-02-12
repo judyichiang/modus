@@ -87,7 +87,6 @@ class App {
                 document.getElementsByClassName("background")[i].className = "background hidden";
             }
         };
-        weather = "snow"
         switch (weather) {
             case "clear":
                 hideVideo();
@@ -104,6 +103,14 @@ class App {
             case "snow":
                 hideVideo();
                 document.getElementsByClassName("background")[3].classList.remove("hidden")
+                break;
+            case "clouds":
+                hideVideo();
+                if (data.weather[0].id == 801 || data.weather[0].id == 802) {
+                    document.getElementsByClassName("background")[0].classList.remove("hidden")
+                } else {
+                    document.getElementsByClassName("background")[5].classList.remove("hidden")
+                }
                 break;
             default:
                 hideVideo();
