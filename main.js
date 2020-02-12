@@ -1,4 +1,4 @@
-let photos = new Photos("dog");
+let photos = new Photos();
 var quotes = new Quotes();
 var app = new App(quotes, photos);
 var homePage = document.querySelector('#home-page');

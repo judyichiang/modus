@@ -4,16 +4,16 @@ class Photos {
     this.handleGetPhotoError = this.handleGetPhotoError.bind(this);
     this.initializeModal = this.initializeModal.bind(this);
     this.query = query;
-    this.test = 'palm tree';
+    this.test = 'sunny';
   }
 
-  getPhotos() {
+  getPhotos(weatherCondition) {
     $.ajax({
       method: "GET",
       beforeSend: function (xhr) {
         xhr.setRequestHeader("Authorization", "563492ad6f91700001000001181a6d6be1a748cbba8b2a899f7be7b1");
       },
-      url: "https://api.pexels.com/v1/search?query=" + this.test + "&per_page=80&page=1",
+      url: "https://api.pexels.com/v1/search?query=weather,condition,climate" + weatherCondition + "&per_page=80&page=1",
       success: this.handleGetPhotoSuccess,
       error: this.handleGetPhotoError,
     });
@@ -39,6 +39,7 @@ class Photos {
         console.log("this.source", this.src);
       })
     }
+    console.log("success")
   }
 
   handleGetPhotoError(error) {
