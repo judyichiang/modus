@@ -1,4 +1,4 @@
-let photos = new Photos();
+let photos = new Photos("dog");
 var quotes = new Quotes();
 var app = new App(quotes, photos);
 app.start();
