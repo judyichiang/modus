@@ -21,7 +21,7 @@ class Photos {
     console.log("final selected photos", selectedPhotos);
 
     $(".d-block").each(function (i) {
-      this.src = selectedPhotos[i].src.large;
+      this.src = selectedPhotos[i].src.medium;
       console.log("this.source", this.src);
     })
 }

@@ -155,3 +155,7 @@ label {
 .quote-author {
   font-size: 1.5rem;
 }
+
+#photo-modal > div {
+  margin: 20px auto;
+}
