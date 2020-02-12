@@ -16,7 +16,6 @@ handleGetQuoteSuccess(data) {
   var qButton = document.querySelector('#quote-button');
 
   quoteContent1.textContent = `"${data.quoteText}"`;
-  // quoteContent2.textContent = `- ${data.quoteAuthor}`;
 
   if (data.quoteAuthor.length === 0) {
     quoteContent2.textContent = "Unknown"
@@ -29,12 +28,10 @@ handleGetQuoteSuccess(data) {
 }
 
 initializeModal() {
-  // console.log("quote button clicked")
-  var homePage = document.querySelector('#home-page')
-  var quoteModal = document.querySelector('#quote-modal');
-  quoteModal.classList.remove('hidden');
-  homePage.classList.add('hidden');
-  this.setIntervalID = setInterval(this.getQuotes, 5000);
+  document.querySelector('#quote-modal').classList.remove('hidden');
+  document.querySelector('#home-page').classList.add('hidden');
+  this.setIntervalID = setInterval(this.getQuotes, 6000);
+
 }
 
 handleGetQuoteError(error) {

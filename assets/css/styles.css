@@ -81,7 +81,6 @@ section, .modal > .flex-container > div {
 button.return-button-2 {
   position: relative;
   top: 250px;
-  right: 10px;
 }
 
 .quotes {
@@ -109,6 +108,10 @@ input {
   padding: 15px;
   border: none;
   border-radius: 10px;
+}
+
+label {
+  margin: 0;
 }
 
 .modal {
@@ -149,4 +152,14 @@ input {
 
 .quote-author {
   font-size: 1.5rem;
+}
+
+#photo-modal > div {
+  margin: 20px auto;
+}
+
+.carousel-item > img  {
+  object-fit: cover;
+  width: 30vw;
+  height: 45vh;
 }
