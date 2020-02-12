@@ -20,6 +20,7 @@
         <div id="weather-display" class="">
           <h1 id="greetStatement">Hello!</h1>
           <br>
+          <i class="fas fa-location-arrow"></i>
           <div id="location-display"></div>
           <div id="weather-icon"></div>
           <div id="temperature-display">
@@ -42,19 +43,19 @@
     </div>
   </main>
 
-  <aside id="photo-modal" class="modal hidden flex-container">
-    <div class="flex-container flex-column">
+  <aside id="photo-modal" class="modal hidden flex-container flex-column">
+    <div class="flex-container">
       <div class="modal-content">Content</div>
       <div class="button-container"><button class="return-button-1" type="button">R E T U R N</button></div>
     </div>
   </aside>
 
-  <aside id="quote-modal" class="modal hidden flex-container">
-    <div class="flex-container flex-column">
-      <div class="modal-content quote-text">Content</div>
-      <div class="modal-content quote-author">Content</div>
-      <div class="button-container"><button class="return-button-2" type="button">R E T U R N</button></div>
+  <aside id="quote-modal" class="modal hidden flex-container flex-column">
+    <div class="flex-container flex-column quotes">
+      <div class="modal-content quote-text flex-row">Content</div>
+      <div class="modal-content quote-author flex-row">Content</div>
     </div>
+    <div class="button-container flex-row quote-button"><button class="return-button-2" type="button">R E T U R N</button></div>
   </aside>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
