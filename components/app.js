@@ -7,6 +7,7 @@ class App {
         this.getZipSuccess = this.getZipSuccess.bind(this);
         this.getZipError = this.getZipError.bind(this);
         this.quotes = quotes;
+        this.setIntervalID = null;
         this.userLocation = null;
         this.currentWeather = null;
         this.inputZip = null;
@@ -69,10 +70,11 @@ class App {
         var iconImg = document.createElement("img")
         iconImg.src = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.getElementById("weather-icon").append(iconImg);
-    };
-    getWeatherError (error) {
+    }
+    getWeatherError(error) {
         console.log(error);
     }
+
     start() {
         this.getLocation();
         this.quotes.getQuotes();
