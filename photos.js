@@ -50,9 +50,9 @@ class Photos {
   }
 
   initializeModal() {
+    this.getPhotos();
     document.getElementById('home-page').classList.add('hidden');
     document.getElementById('photo-modal').classList.remove('hidden');
-    this.getPhotos();
   }
 
   getPhotos() {
