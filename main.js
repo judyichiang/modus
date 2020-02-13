@@ -31,7 +31,7 @@ function createEventListeners() {
   });
 
   document.getElementById("location-button").addEventListener("click", function () {
-    app.getZip(document.querySelector("#location-bar>label>input").value);
+    app.getZip(document.querySelector("#location-bar>input").value);
   });
 
   document.getElementById("recenter").addEventListener("click", function () {

@@ -26,11 +26,11 @@ class App {
         var state = this.userLocation.region;
         document.querySelector("#location-display").textContent = city + ", " + state;
         this.getWeather(this.userLocation.zip);
-        document.querySelector("#location-bar>label>input").value = "";
+        document.querySelector("#location-bar>input").value = "";
     }
     getLocationError(error) {
         console.log(error);
-        document.querySelector("#location-bar>label>input").value = "";
+        document.querySelector("#location-bar>input").value = "";
     }
     getZip (inputZip) {
         if (!/[\d]{5}/.test(inputZip)) {
@@ -45,16 +45,16 @@ class App {
     };
 
     getZipSuccess (data) {
-        this.userLocation = document.querySelector("#location-bar>label>input").value;
+        this.userLocation = document.querySelector("#location-bar>input").value;
         this.inputZip = data.places[0];
         document.getElementById("location-display").textContent = this.inputZip["place name"] + ", " + this.inputZip["state abbreviation"];
         app.getWeather(this.userLocation);
-        document.querySelector("#location-bar>label>input").value = "";
+        document.querySelector("#location-bar>input").value = "";
     }
     getZipError (error) {
         console.log(error);
         alert("Invalid ZIP code. Please try again.");
-        document.querySelector("#location-bar>label>input").value = "";
+        document.querySelector("#location-bar>input").value = "";
     }
     getWeather(userLocation) {
         $.ajax({
@@ -91,7 +91,7 @@ class App {
                 this.photos.query = "sunny";
                 break;
             case "rain":
-            case "drizzle":    
+            case "drizzle":
                 hideVideo();
                 document.getElementsByClassName("background")[1].classList.remove("hidden")
                 this.photos.query = "rain";
