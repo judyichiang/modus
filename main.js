@@ -6,8 +6,8 @@ var quoteContent2 = document.querySelector('.quote-author');
 var qButton = document.querySelector('#quote-button');
 
 
-const photoModal = document.getElementById("photo-modal");
-const photoButton = document.getElementById("photo-button");
+var photoModal = document.getElementById("photo-modal");
+var photoButton = document.getElementById("photo-button");
 var returnButton1 = document.querySelector('.return-button');
 var returnButton2 = document.querySelector('.return-button-2');
 

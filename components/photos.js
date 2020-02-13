@@ -19,11 +19,11 @@ class Photos {
   }
 
   handleGetPhotoSuccess(data) {
-    const selectedPhotos = [];
-    let counter = 0;
+    var selectedPhotos = [];
+    var counter = 0;
     if (data.photos.length > 3) {
       while (counter < 4) {
-        const randomIndex = Math.floor(Math.random() * (data.photos.length));
+        var randomIndex = Math.floor(Math.random() * (data.photos.length));
         if (!selectedPhotos.includes(data.photos[randomIndex])) {
           selectedPhotos.push(data.photos[randomIndex]);
           counter++;
