@@ -11,9 +11,21 @@ const photoButton = document.getElementById("photo-button");
 var returnButton1 = document.querySelector('.return-button');
 var returnButton2 = document.querySelector('.return-button-2');
 
-var photos = new Photos();
+var tempFahrenheit = document.getElementById("temp-fahrenheit");
+var tempCelsius = document.getElementById("temp-celsius");
+var weatherIcon = document.querySelector("#weather-icon");
+var videoTags = document.querySelectorAll("video");
+var backgroundVid = document.getElementsByClassName("background");
+
+var locationInput = document.querySelector("#location-bar>label>input");
+var locationDisplay = document.getElementById("location-display");
+
 var quotes = new Quotes(quoteContent1, quoteContent2, qButton);
-var app = new App(quotes, photos);
+var weather = new Weather (tempFahrenheit, tempCelsius, weatherIcon, videoTags, backgroundVid);
+var photos = new Photos(weather);
+var zipCode = new ZipCode (weather, locationInput, locationDisplay);
+var userLocation = new UserLocation (weather, locationDisplay, locationInput);
+var app = new App(userLocation, weather, zipCode, quotes);
 
 app.start();
 createEventListeners();
@@ -31,10 +43,13 @@ function createEventListeners() {
   });
 
   document.getElementById("location-button").addEventListener("click", function () {
-    app.getZip(document.querySelector("#location-bar>label>input").value);
+    zipCode.getZip(document.querySelector("#location-bar>label>input").value);
   });
 
   document.getElementById("recenter").addEventListener("click", function () {
-    app.getLocation();
+    userLocation.getLocation();
+  });
+  document.getElementById("photo-button").addEventListener("click", function () {
+    photos.initializeModal();
   });
 }
