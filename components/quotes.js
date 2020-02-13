@@ -1,5 +1,8 @@
 class Quotes {
-  constructor() {
+  constructor(quoteContent1, quoteContent2, qButton) {
+    this.quoteContent1 = quoteContent1;
+    this.quoteContent2 = quoteContent2;
+    this.qButton = qButton;
 
     this.setIntervalID = null;
     this.handleGetQuoteSuccess = this.handleGetQuoteSuccess.bind(this);
@@ -8,40 +11,36 @@ class Quotes {
     this.getQuotes = this.getQuotes.bind(this);
   }
 
-handleGetQuoteSuccess(data) {
-  var quoteContent1 = document.querySelector('.quote-text');
-  var quoteContent2 = document.querySelector('.quote-author');
-  var qButton = document.querySelector('#quote-button');
+  handleGetQuoteSuccess(data) {
+    this.quoteContent1.textContent = `"${data.quoteText}"`;
 
-  quoteContent1.textContent = `"${data.quoteText}"`;
+    if (data.quoteAuthor.length === 0) {
+      this.quoteContent2.textContent = "Unknown"
+    }
+    else {
+      this.quoteContent2.textContent = `${data.quoteAuthor}`;
+    }
 
-  if (data.quoteAuthor.length === 0) {
-    quoteContent2.textContent = "Unknown"
+    this.qButton.addEventListener("click", this.initializeModal)
   }
-  else {
-    quoteContent2.textContent = `${data.quoteAuthor}`;
+
+  initializeModal() {
+    document.querySelector('#quote-modal').classList.remove('hidden');
+    document.querySelector('#home-page').classList.add('hidden');
+    this.setIntervalID = setInterval(this.getQuotes, 6000);
+
   }
 
-  qButton.addEventListener("click", this.initializeModal)
-}
+  handleGetQuoteError(error) {
+    console.log(error);
+  }
 
-initializeModal() {
-  document.querySelector('#quote-modal').classList.remove('hidden');
-  document.querySelector('#home-page').classList.add('hidden');
-  this.setIntervalID = setInterval(this.getQuotes, 6000);
-
-}
-
-handleGetQuoteError(error) {
-  console.log(error);
-}
-
-getQuotes() {
-  $.ajax({
-    url: "https://quote-garden.herokuapp.com/quotes/random",
-    success: this.handleGetQuoteSuccess,
-    error: this.handleGetQuoteError
-  })
-}
+  getQuotes() {
+    $.ajax({
+      url: "https://quote-garden.herokuapp.com/quotes/random",
+      success: this.handleGetQuoteSuccess,
+      error: this.handleGetQuoteError
+    })
+  }
 
 }
