@@ -17,7 +17,7 @@ var weatherIcon = document.querySelector("#weather-icon");
 var videoTags = document.querySelectorAll("video");
 var backgroundVid = document.getElementsByClassName("background");
 
-var locationInput = document.querySelector("#location-bar>label>input");
+var locationInput = document.getElementById("zip-input");
 var locationDisplay = document.getElementById("location-display");
 
 var quotes = new Quotes(quoteContent1, quoteContent2, qButton);
@@ -43,7 +43,7 @@ function createEventListeners() {
   });
 
   document.getElementById("location-button").addEventListener("click", function () {
-    zipCode.getZip(document.querySelector("#location-bar>label>input").value);
+    zipCode.getZip(locationInput.value);
   });
 
   document.getElementById("recenter").addEventListener("click", function () {
